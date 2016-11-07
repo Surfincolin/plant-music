@@ -1,0 +1,21 @@
+#N canvas 416 365 450 300 10;
+#X obj 29 42 initial_note;
+#X obj 29 99 choose_scale;
+#X obj 29 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 117 98 create_sequence;
+#X obj 29 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X floatatom 204 77 5 0 0 0 - - -;
+#X obj 297 89 play_sequence;
+#X obj 297 51 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 296 68 metro 250;
+#X connect 0 0 2 0;
+#X connect 0 0 5 0;
+#X connect 2 0 1 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 3 1;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
