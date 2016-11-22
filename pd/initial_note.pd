@@ -1,0 +1,10 @@
+#N canvas 239 110 450 300 10;
+#X obj 183 107 random 60;
+#X obj 182 149 + 40;
+#X floatatom 177 197 5 0 0 0 - - -;
+#X obj 177 66 inlet;
+#X obj 175 227 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
