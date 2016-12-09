@@ -1,0 +1,11 @@
+#N canvas 672 188 620 300 10;
+#X obj 108 65 inlet;
+#X obj 108 195 outlet;
+#X obj 435 66 inlet;
+#X obj 108 136 expr if(scale_degrees[$f1]+1 \, scale_degrees[$f1] +
+$f2 \, scale_degrees[$f1]+1);
+#X obj 108 97 random 18;
+#X connect 0 0 4 0;
+#X connect 2 0 3 1;
+#X connect 3 0 1 0;
+#X connect 4 0 3 0;
