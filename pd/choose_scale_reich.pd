@@ -1,0 +1,83 @@
+#N canvas 4 0 1338 709 10;
+#X obj 26 19 table scale_degrees;
+#X obj 208 160 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 208 589 sel 0 1 2 3 4 5 6 7 8 9 10;
+#X obj 208 23 inlet;
+#X text 206 3 bang;
+#X text 406 5 current note/root note;
+#X text 309 4 mode;
+#X obj 208 100 i;
+#X floatatom 309 77 5 0 0 0 - - -;
+#X text 306 92 current mode;
+#X floatatom 308 117 5 0 0 0 - - -;
+#X obj 309 22 r mode;
+#X obj 411 51 i;
+#X obj 411 22 r root_note;
+#X floatatom 411 80 5 0 0 0 - - -;
+#X obj 30 54 table scale_steps;
+#X text 345 120 old_mode;
+#X obj 308 138 s old_mode;
+#X obj 146 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 219 50 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 348 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 348 76 outlet;
+#X obj 35 104 change_root;
+#X text 568 -17 chord 1;
+#X text 587 59 chord 2;
+#X text 587 141 chord 3;
+#X text 593 216 chord 4;
+#X text 589 293 chord 5;
+#X text 950 140 chord 6;
+#X text 949 226 chord 7;
+#X text 947 307 chord 8;
+#X text 947 387 chord 9;
+#X text 947 467 chord 10;
+#X msg 569 -1 \; scale_degrees 0 42 47 62 69 74 76 81 86 -1 -1 -1 -1
+-1 -1 -1 \; mode 1 \; root_note 0;
+#X msg 570 77 \; scale_degrees 0 47 54 62 64 69 74 76 81 86 -1 -1 -1
+-1 -1 -1 \; mode 2 \; root_note 0;
+#X msg 570 158 \; scale_degrees 0 42 49 64 69 71 76 81 83 88 -1 -1
+-1 -1 -1 -1 \; mode 3 \; root_note 0;
+#X msg 569 235 \; scale_degrees 0 38 45 64 66 68 71 76 83 -1 -1 -1
+-1 -1 -1 -1 \; mode 4 \; root_note 0;
+#X msg 566 311 \; scale_degrees 0 45 52 64 66 68 71 73 76 83 -1 -1
+-1 -1 -1 -1 \; mode 5 \; root_note 0;
+#X msg 931 159 \; scale_degrees 0 49 54 66 68 69 73 81 85 -1 -1 -1
+-1 -1 -1 -1 \; mode 6 \; root_note 0;
+#X msg 929 240 \; scale_degrees 0 42 49 66 68 69 71 73 78 -1 -1 -1
+-1 -1 -1 -1 \; mode 7 \; root_note 0;
+#X msg 927 323 \; scale_degrees 0 40 45 60 66 68 69 71 76 80 83 88
+-1 -1 -1 -1 \; mode 8 \; root_note 0;
+#X msg 928 403 \; scale_degrees 0 38 45 65 68 69 76 81 88 -1 -1 -1
+-1 -1 -1 -1 \; mode 9 \; root_note 0;
+#X msg 928 483 \; scale_degrees 0 45 50 64 66 69 76 81 -1 -1 -1 -1
+-1 -1 -1 -1 \; mode 0 \; root_note 0;
+#X msg -5 149 \; scale steps 0 0 0 0 0 0 0 0 0 0 0;
+#X connect 1 0 2 0;
+#X connect 2 0 33 0;
+#X connect 2 1 34 0;
+#X connect 2 2 35 0;
+#X connect 2 3 36 0;
+#X connect 2 4 37 0;
+#X connect 2 5 38 0;
+#X connect 2 6 39 0;
+#X connect 2 7 40 0;
+#X connect 2 8 41 0;
+#X connect 2 9 42 0;
+#X connect 3 0 7 0;
+#X connect 3 0 18 0;
+#X connect 3 0 19 0;
+#X connect 7 0 1 0;
+#X connect 7 0 10 0;
+#X connect 10 0 17 0;
+#X connect 11 0 8 0;
+#X connect 11 0 7 1;
+#X connect 11 0 20 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 18 0 43 0;
+#X connect 20 0 21 0;

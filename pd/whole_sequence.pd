@@ -1,34 +1,78 @@
-#N canvas 88 88 581 518 10;
-#X obj 29 42 initial_note;
-#X obj 29 99 choose_scale;
-#X obj 29 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 563 92 606 563 10;
+#X obj 10 -106 initial_note;
+#X obj 5 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 117 98 create_sequence;
-#X obj 29 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 10 -134 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 383 175 play_sequence;
+#X obj 402 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X floatatom 204 77 5 0 0 0 - - -;
-#X obj 257 84 play_sequence;
-#X obj 258 11 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 257 28 metro 250;
-#X obj 326 45 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 394 150 volume_controller;
+#X obj 287 29 metronome;
+#X obj 5 268 create_bassline;
+#X obj 335 222 play_bassline;
+#X obj 355 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 257 109 instrument_out 1;
-#X obj 265 135 instrument_out 2;
-#X obj 274 161 instrument_out 3;
-#X obj 286 187 instrument_out 4;
-#X obj 268 63 volume_controller;
-#X connect 0 0 2 0;
-#X connect 0 0 5 0;
-#X connect 2 0 1 0;
-#X connect 2 0 3 0;
-#X connect 4 0 0 0;
-#X connect 5 0 3 1;
-#X connect 6 0 10 0;
-#X connect 6 0 11 0;
-#X connect 6 0 12 0;
-#X connect 6 0 13 0;
-#X connect 7 0 8 0;
-#X connect 8 0 6 0;
-#X connect 8 0 9 0;
-#X connect 8 0 14 0;
+#X obj 288 -146 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4700 1;
+#X floatatom 92 -105 5 0 0 0 - - -;
+#X obj 48 -76 s mode;
+#X obj 108 -77 s old_mode;
+#X obj 396 325 play_sequence2;
+#X obj 366 272 play_sequence3;
+#X obj 396 351 instrument_out 4;
+#X obj 383 200 instrument_out 1;
+#X obj 335 248 instrument_out 2;
+#X obj 366 298 instrument_out 3;
+#X obj 50 74 counter;
+#X floatatom 50 120 5 0 0 0 - - -;
+#X obj 19 245 create_sequence;
+#X obj 50 143 sel 0 4 8 12 16 20 24 28;
+#X obj 120 201 create_sequence2;
+#X obj 85 181 create_sequence3;
+#X obj 287 -10 expr $f1/127*155;
+#X obj 287 10 + 20;
+#X obj 50 295 counter;
+#X obj 50 315 % 5;
+#X floatatom 50 335 5 0 0 0 - - -;
+#X msg 35 -141 \; scale_steps 0 0 2 4 5 7 9 11 2 0 0;
+#X obj 50 97 % 32;
+#X obj 3 357 to_ableton;
+#X obj 10 -162 loadbang;
+#X obj 449 -147 nbx 5 28 -1e+037 1e+037 0 0 empty root_note Root_Note
+0 -8 0 15 -4032 -1 -1 2 256;
+#X obj 5 225 choose_scale_reich;
+#X connect 1 0 36 0;
+#X connect 2 0 0 0;
+#X connect 2 0 31 0;
+#X connect 2 0 11 0;
+#X connect 3 0 17 0;
+#X connect 6 0 20 0;
+#X connect 6 1 8 0;
+#X connect 6 1 9 0;
+#X connect 6 2 4 0;
+#X connect 6 2 5 0;
+#X connect 6 2 15 0;
+#X connect 6 2 14 0;
+#X connect 6 2 3 0;
+#X connect 8 0 18 0;
+#X connect 10 0 26 0;
+#X connect 11 0 12 0;
+#X connect 11 0 13 0;
+#X connect 14 0 16 0;
+#X connect 15 0 19 0;
+#X connect 20 0 32 0;
+#X connect 21 0 23 0;
+#X connect 23 0 1 0;
+#X connect 23 0 28 0;
+#X connect 23 2 25 0;
+#X connect 23 4 24 0;
+#X connect 26 0 27 0;
+#X connect 27 0 6 0;
+#X connect 28 0 29 0;
+#X connect 29 0 30 0;
+#X connect 30 0 33 5;
+#X connect 32 0 21 0;
+#X connect 34 0 2 0;
+#X connect 36 0 22 0;
+#X connect 36 0 7 0;
