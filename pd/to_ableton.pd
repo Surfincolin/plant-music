@@ -44,7 +44,6 @@
 #X msg 716 61 127;
 #X obj 766 -20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 794 -23 0;
 #X msg 828 -22 1;
 #X msg 861 -22 2;
 #X msg 896 -22 3;
@@ -55,6 +54,7 @@
 #X msg 977 23 127;
 #X obj 977 -18 inlet;
 #X obj 977 45 ctlout 1 6;
+#X msg 794 -23 6;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
@@ -89,7 +89,7 @@
 #X connect 40 0 34 0;
 #X connect 41 0 34 0;
 #X connect 42 0 34 0;
-#X connect 43 0 34 0;
-#X connect 45 0 46 0;
-#X connect 46 0 48 0;
-#X connect 47 0 45 0;
+#X connect 44 0 45 0;
+#X connect 45 0 47 0;
+#X connect 46 0 44 0;
+#X connect 48 0 34 0;

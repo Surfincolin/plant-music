@@ -1,0 +1,17 @@
+#N canvas 564 201 620 300 10;
+#X obj 108 65 inlet;
+#X obj 108 195 outlet;
+#X obj 442 61 inlet;
+#X obj 108 97 random 9;
+#X floatatom 132 114 5 0 0 0 - - -;
+#X obj 283 194 outlet;
+#X obj 457 200 outlet;
+#X obj 108 136 expr if(scale_degrees[$f1*2]+1 \, scale_degrees[$f1*2]
++ $f2 \, scale_degrees[$f1*2]+1) \; scale_degrees[$f1*2] \; $f2;
+#X connect 0 0 3 0;
+#X connect 2 0 7 1;
+#X connect 3 0 4 0;
+#X connect 3 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 1 5 0;
+#X connect 7 2 6 0;
