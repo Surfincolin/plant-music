@@ -1,0 +1,17 @@
+#N canvas 242 37 403 367 10;
+#X obj 22 20 inlet;
+#X obj 22 118 noteout \$1;
+#X obj 22 91 makenote 64 250;
+#X obj 109 20 inlet;
+#X obj 136 117 noteout \$1;
+#X obj 136 90 makenote 64 250;
+#X obj 22 54 unpack f f;
+#X connect 0 0 6 0;
+#X connect 2 0 1 0;
+#X connect 2 1 1 1;
+#X connect 3 0 2 2;
+#X connect 3 0 5 2;
+#X connect 5 0 4 0;
+#X connect 5 1 4 1;
+#X connect 6 0 2 0;
+#X connect 6 1 5 0;
