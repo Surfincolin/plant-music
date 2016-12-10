@@ -37,32 +37,32 @@ void setup()
 
   
   // PLANT SENSOR 1
-  TCCR4A=0b10000010;        //-Set up frequency generator
-  TCCR4B=0b00011001;        //-+
-  ICR4=110;
-  OCR4A=55;
+  TCCR3A=0b10000010;        //-Set up frequency generator
+  TCCR3B=0b00011001;        //-+
+  ICR3=110; 
+  OCR3A=55;
 
-  pinMode(6,OUTPUT);        //-Signal generator pin
+  pinMode(5,OUTPUT);        //-Signal generator pin
 //  pinMode(7,OUTPUT);        //-Signal generator pin
 //  pinMode(8,OUTPUT);        //-Signal generator pin
   // pinMode(8,OUTPUT);        //-Sync (test) pin
 
   // PLANT SENSOR 2
-  TCCR3A=0b10000010;        //-Set up frequency generator
-  TCCR3B=0b00011001;        //-+
-  ICR3=110;
-  OCR3A=55;
+//  TCCR3A=0b10000010;        //-Set up frequency generator
+//  TCCR3B=0b00011001;        //-+
+//  ICR3=110;
+//  OCR3A=55;
 
 //  pinMode(2,OUTPUT);        //-Signal generator pin
 //  pinMode(3,OUTPUT);        //-Signal generator pin
-  pinMode(5,OUTPUT);        //-Signal generator pin
+//  pinMode(5,OUTPUT);        //-Signal generator pin
 
 
   Serial.begin(115200);     // baudrate
 
   for(int i=0;i<N;i++) {      //-Preset results
     results[i]=0;        		 //-+
-    resultsB[i]=0;        		 //-+
+//    resultsB[i]=0;        		 //-+
   }
   
 }
@@ -76,38 +76,41 @@ void loop()
   {
     unsigned int dB = d;
     int v=analogRead(0);    //-Read response signal
+//    Serial.println(d);
+    CLR(TCCR3B,0);          //-Stop generator
     
-    CLR(TCCR4B,0);          //-Stop generator
     
-    TCNT4=0;                //-Reload new frequency
+    TCNT3=0;                //-Reload new frequency
     
-    ICR4=d;                 // |
+    ICR3= d;                 // |
     
-    OCR4A=d/2;              //-+
+    OCR3A=d/2;              //-+
     
-    SET(TCCR4B,0);          //-Restart generator
-    
+    SET(TCCR3B,0);          //-Restart generator
+//    delayMicroseconds(500);
+//    delay(50);
 
     results[d]=results[d]*0.5+(float)(v)*0.5; //Filter results
+//  results[d] = (float)(v);
     
    
     freq[d] = d;
 
-    int vB=analogRead(4);    //-Read response signal
-    CLR(TCCR3B,0);          //-Stop generator
-    TCNT3=0;                //-Reload new frequency
-    ICR3=dB;                 // |
-    OCR3A=dB/2;              //-+
-    SET(TCCR3B,0);          //-Restart generator
-
-    resultsB[dB]=resultsB[dB]*0.5+(float)(vB)*0.5; //Filter results
-    
-    freqB[dB] = dB;
+//    int vB=analogRead(4);    //-Read response signal
+//    CLR(TCCR3B,0);          //-Stop generator
+//    TCNT3=0;                //-Reload new frequency
+//    ICR3=dB;                 // |
+//    OCR3A=dB/2;              //-+
+//    SET(TCCR3B,0);          //-Restart generator
+//
+//    resultsB[dB]=resultsB[dB]*0.5+(float)(vB)*0.5; //Filter results
+//    
+//    freqB[dB] = dB;
   }
 
 
 PlottArray(1,freq,results);
-PlottArray(4,freqB,resultsB);
+//PlottArray(4,freqB,resultsB);
 
 // TOG(PORTB,0);            //-Toggle pin 8 after each sweep (good for scope)
 
