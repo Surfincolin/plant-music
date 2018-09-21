@@ -1,4 +1,4 @@
-#N canvas 31 133 294 279 10;
+#N canvas 31 133 415 405 12;
 #X obj 59 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 72 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
@@ -7,10 +7,10 @@
 ;
 #X obj 98 9 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
-#X obj 242 155 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 242 155 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 59 30 bondo 4;
-#X obj 50 200 adjust_volume;
+#X obj 50 240 adjust_volume;
 #X obj 59 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 74 53 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
@@ -21,11 +21,13 @@
 1;
 #X obj 59 75 expr $f1 \; $f2 \; $f3 \; $f4 \; if($f1+$f2+$f3+$f4 ==
 0 \, 1 \, 0) \;;
-#X obj 36 178 adjust_volume;
-#X obj 22 155 adjust_volume;
-#X obj 64 222 adjust_volume;
+#X obj 36 218 adjust_volume;
+#X obj 22 195 adjust_volume;
+#X obj 64 262 adjust_volume;
 #X obj 22 9 inlet;
-#X obj 22 246 to_ableton;
+#X obj 22 348 to_ableton;
+#X obj 65 320 adjust_volume;
+#X msg 108 293 1;
 #X connect 0 0 5 0;
 #X connect 1 0 5 1;
 #X connect 2 0 5 2;
@@ -55,3 +57,7 @@
 #X connect 15 0 12 0;
 #X connect 15 0 6 0;
 #X connect 15 0 14 0;
+#X connect 15 0 17 0;
+#X connect 15 0 18 0;
+#X connect 17 0 16 4;
+#X connect 18 0 17 1;

@@ -3,7 +3,7 @@ import processing.serial.*;
 
 // for port setup
 int SerialPortNumber=2;
-int PortSelected=1;
+int PortSelected=0;
 
 int midiMax = 127;
 int midiMin = 0;
@@ -31,7 +31,7 @@ void setup() {
   //json.setString("name", "Lion");
 
   //saveJSONObject(json, "data/new.json");
-  
+  println(Serial.list());
   String portName = Serial.list()[PortSelected];
   myPort = new Serial(this, portName, 19200); // Setup port with baudrate
   delay(50);

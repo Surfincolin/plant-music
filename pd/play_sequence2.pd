@@ -1,4 +1,4 @@
-#N canvas 662 110 505 333 10;
+#N canvas 255 231 505 333 10;
 #X obj 20 20 inlet;
 #X text 18 2 metronome in;
 #X obj 20 217 outlet;
@@ -6,16 +6,18 @@
 #X obj 20 43 i;
 #X obj 51 43 + 2;
 #X obj 20 66 % 8;
-#X floatatom 20 147 5 0 0 0 - - -;
-#X floatatom 153 148 5 0 0 0 - - -;
+#X floatatom 20 147 5 0 0 0 - - -, f 5;
+#X floatatom 153 148 5 0 0 0 - - -, f 5;
 #X obj 195 25 r root_note;
-#X floatatom 214 56 5 0 0 0 - - -;
+#X floatatom 214 56 5 0 0 0 - - -, f 5;
 #X obj 21 110 expr if(sequence2[$f1] == 0 \, $f2 \, sequence2[$f1])
 \; if(sequence2[$f1 + 1] == 0 \, $f2 \, sequence2[$f1+1]);
 #X obj 202 81 i;
 #X obj 127 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 281 54 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 324 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X connect 0 0 4 0;
 #X connect 3 0 2 0;
@@ -28,8 +30,10 @@
 #X connect 8 0 3 1;
 #X connect 9 0 10 0;
 #X connect 10 0 12 1;
+#X connect 10 0 11 1;
+#X connect 10 0 15 0;
 #X connect 11 0 7 0;
 #X connect 11 1 8 0;
-#X connect 12 0 11 1;
 #X connect 13 0 12 0;
+#X connect 13 0 10 0;
 #X connect 14 0 10 0;

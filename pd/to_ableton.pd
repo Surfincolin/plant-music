@@ -1,72 +1,95 @@
-#N canvas 13 362 1169 333 10;
-#X obj -17 -16 inlet;
-#X obj -17 8 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
+#N canvas 497 330 1396 509 10;
+#X obj 95 106 inlet;
+#X obj 95 130 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj -17 168 ctlout 1 1;
-#X obj -17 146 expr $f1/100*120;
-#X obj 113 8 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 95 338 ctlout 1 1;
+#X obj 95 268 expr $f1/100*120;
+#X obj 225 130 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 113 146 expr $f1/100*120;
-#X obj 113 168 ctlout 1 2;
-#X obj 363 8 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 225 268 expr $f1/100*120;
+#X obj 225 338 ctlout 1 2;
+#X obj 475 130 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 363 146 expr $f1/100*120;
-#X obj 233 8 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
+#X obj 475 268 expr $f1/100*120;
+#X obj 345 130 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 233 146 expr $f1/100*120;
-#X obj 233 168 ctlout 1 3;
-#X obj 363 168 ctlout 1 4;
-#X obj 113 -17 inlet;
-#X obj 233 -16 inlet;
-#X obj 363 -17 inlet;
-#X text -16 -34 vol1;
-#X text 112 -34 vol2;
-#X text 232 -34 vol3;
-#X text 361 -34 vol4;
-#X obj 517 -22 inlet;
-#X text 514 -41 metro;
-#X floatatom 561 123 5 0 0 0 - - -;
-#X floatatom 561 166 5 0 0 0 - - -;
-#X obj 561 187 ctlout 10 1;
-#X text 710 -40 select drum loop;
-#X floatatom 562 75 5 0 0 0 - - -;
-#X msg 517 26 20;
-#X obj 517 2 moses 20;
-#X obj 562 95 - 20;
-#X msg 613 50 175;
-#X obj 562 26 moses 175;
-#X obj 561 144 expr $f1/155*127;
-#X obj 716 -19 inlet;
-#X floatatom 716 16 5 0 0 0 - - -;
-#X obj 716 83 ctlout 1 5;
-#X obj 716 39 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 716 61 127;
-#X obj 766 -20 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 345 268 expr $f1/100*120;
+#X obj 345 338 ctlout 1 3;
+#X obj 475 338 ctlout 1 4;
+#X obj 225 105 inlet;
+#X obj 345 106 inlet;
+#X obj 475 105 inlet;
+#X text 96 88 vol1;
+#X text 224 88 vol2;
+#X text 344 88 vol3;
+#X text 473 88 vol4;
+#X obj 752 100 inlet;
+#X text 749 81 metro;
+#X floatatom 796 245 5 0 0 0 - - -, f 5;
+#X floatatom 796 288 5 0 0 0 - - -, f 5;
+#X obj 796 309 ctlout 10 1;
+#X text 945 82 select drum loop;
+#X floatatom 797 197 5 0 0 0 - - -, f 5;
+#X msg 752 148 20;
+#X obj 752 124 moses 20;
+#X obj 797 217 - 20;
+#X msg 848 172 175;
+#X obj 797 148 moses 175;
+#X obj 796 266 expr $f1/155*127;
+#X obj 951 103 inlet;
+#X floatatom 951 138 5 0 0 0 - - -, f 5;
+#X obj 951 205 ctlout 1 5;
+#X obj 951 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 828 -22 1;
-#X msg 861 -22 2;
-#X msg 896 -22 3;
-#X msg 929 -22 4;
-#X text 966 -38 stop ableton playback;
-#X obj 977 3 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 977 23 127;
-#X obj 977 -18 inlet;
-#X obj 977 45 ctlout 1 6;
-#X msg 794 -23 6;
+#X msg 951 183 127;
+#X obj 1001 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1063 100 1;
+#X msg 1096 100 2;
+#X msg 1131 100 3;
+#X msg 1164 100 4;
+#X text 1201 84 stop ableton playback;
+#X obj 1212 125 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1212 145 127;
+#X obj 1212 104 inlet;
+#X obj 1212 167 ctlout 1 6;
+#X msg 1029 99 5;
+#X floatatom 110 300 5 0 0 0 - - -, f 5;
+#X floatatom 265 301 5 0 0 0 - - -, f 5;
+#X floatatom 377 304 5 0 0 0 - - -, f 5;
+#X floatatom 505 303 5 0 0 0 - - -, f 5;
+#X obj 612 129 vsl 15 128 0 300 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 612 267 expr $f1/100*120;
+#X obj 612 337 ctlout 1 4;
+#X obj 612 104 inlet;
+#X floatatom 642 302 5 0 0 0 - - -, f 5;
+#X text 610 87 vol5;
+#X floatatom 133 136 5 0 0 0 - - -, f 5;
+#X floatatom 255 135 5 0 0 0 - - -, f 5;
+#X floatatom 385 137 5 0 0 0 - - -, f 5;
+#X floatatom 514 135 5 0 0 0 - - -, f 5;
 #X connect 0 0 1 0;
+#X connect 0 0 59 0;
 #X connect 1 0 3 0;
 #X connect 3 0 2 0;
+#X connect 3 0 49 0;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
+#X connect 5 0 50 0;
 #X connect 7 0 8 0;
 #X connect 8 0 12 0;
+#X connect 8 0 52 0;
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
+#X connect 10 0 51 0;
 #X connect 13 0 4 0;
+#X connect 13 0 60 0;
 #X connect 14 0 9 0;
+#X connect 14 0 61 0;
 #X connect 15 0 7 0;
+#X connect 15 0 62 0;
 #X connect 20 0 28 0;
 #X connect 22 0 32 0;
 #X connect 23 0 24 0;
@@ -93,3 +116,7 @@
 #X connect 45 0 47 0;
 #X connect 46 0 44 0;
 #X connect 48 0 34 0;
+#X connect 53 0 54 0;
+#X connect 54 0 55 0;
+#X connect 54 0 57 0;
+#X connect 56 0 53 0;

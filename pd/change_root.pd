@@ -1,24 +1,24 @@
 #N canvas 927 40 453 307 10;
-#X floatatom 20 140 5 0 0 0 - - -;
+#X floatatom 20 140 5 0 0 0 - - -, f 5;
 #X obj 35 14 r mode;
 #X obj 263 15 r old_mode;
-#X floatatom 20 68 5 0 0 0 - - -;
+#X floatatom 20 68 5 0 0 0 - - -, f 5;
 #X msg 20 251 \; root_note \$1;
 #X obj 20 181 +;
 #X obj 365 141 r root_note;
-#X floatatom 365 165 5 0 0 0 - - -;
-#X floatatom 20 201 5 0 0 0 - - -;
+#X floatatom 365 165 5 0 0 0 - - -, f 5;
+#X floatatom 20 201 5 0 0 0 - - -, f 5;
 #X obj 362 209 inlet;
 #X text 361 193 bypass;
 #X obj 20 226 spigot;
-#X floatatom 263 68 5 0 0 0 - - -;
+#X floatatom 263 68 5 0 0 0 - - -, f 5;
 #X obj 45 186 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 24 157 s mode_diff;
-#X floatatom 263 140 5 0 0 0 - - -;
-#X floatatom 141 140 5 0 0 0 - - -;
+#X floatatom 263 140 5 0 0 0 - - -, f 5;
+#X floatatom 141 140 5 0 0 0 - - -, f 5;
 #X obj 20 47 i;
-#X obj 102 32 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 89 16 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 20 92 expr scale_steps[$f1] - scale_steps[$f2] \; $f1 \; $f2
 \;;
