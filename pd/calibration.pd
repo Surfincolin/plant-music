@@ -1,0 +1,27 @@
+#N canvas 77 150 1709 710 10;
+#X obj 1334 370 nbx 5 40 -1e+037 1e+037 0 0 PokeyState2 empty Plant_4:_Pokey_State_2
+-10 -20 0 30 -225328 -1 -1 0 256;
+#X obj 968 186 nbx 5 40 -1e+037 1e+037 0 0 LeafyState1 empty Plant_3:_Leafy_State_1
+-10 -20 0 30 -4032 -1 -1 614 256;
+#X obj 100 364 nbx 5 25 -1e+037 1e+037 0 0 BegoniaState2 empty Plant_1:_Begonia_State_2
+-10 -15 0 20 -227137 -1 -1 0 256;
+#X obj 100 194 nbx 5 40 -1e+037 1e+037 0 0 BegoniaState1 empty Plant_1:_Begonia_State_1
+-10 -20 0 30 -260097 -1 -1 562 256;
+#X obj 966 372 nbx 5 25 -1e+037 1e+037 0 0 LeafyState2 empty Plant_3:_Leafy_State_2
+-10 -15 0 20 -19708 -1 -1 0 256;
+#X obj 516 180 nbx 5 40 -1e+037 1e+037 0 0 LittleGuyState1 empty Plant_2:_Little_Guy_State_1
+-10 -20 0 30 -159051 -1 -1 648 256;
+#X obj 524 374 nbx 5 25 -1e+037 1e+037 0 0 LittleGuyState2 empty Plant_2:_Little_Guy_State_2
+-10 -15 0 20 -125716 -1 -1 0 256;
+#X obj 1332 182 nbx 5 40 -1e+037 1e+037 0 0 PokeyState1 empty Plant_4:_Pokey_State_1
+-10 -20 0 30 -205171 -1 -1 608 256;
+#X obj 100 524 nbx 5 25 -1e+037 1e+037 0 0 BegoniaCutoff empty Plant_1:_Begonia_Cutoff
+-10 -15 0 20 -225985 -1 -1 0 256;
+#X obj 110 67 nbx 5 40 -1e+037 1e+037 0 0 empty plant1 Plant_1_in 0
+-30 0 30 -262144 -1 -1 560 256;
+#X obj 510 67 nbx 5 40 -1e+037 1e+037 0 0 empty plant2 Plant_2_in 0
+-30 0 30 -262144 -1 -1 629 256;
+#X obj 960 67 nbx 5 40 -1e+037 1e+037 0 0 empty plant3 Plant_3_in 0
+-30 0 30 -262144 -1 -1 609 256;
+#X obj 1330 67 nbx 5 40 -1e+037 1e+037 0 0 empty plant4 Plant_4_in
+0 -30 0 30 -262144 -1 -1 630 256;

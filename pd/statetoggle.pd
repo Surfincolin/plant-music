@@ -1,0 +1,9 @@
+#N canvas 0 50 431 313 10;
+#X obj 192 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 192 178 >=;
+#X msg 130 88 \$1;
+#X msg 240 86 \$2;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;

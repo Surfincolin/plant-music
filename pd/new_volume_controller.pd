@@ -1,0 +1,58 @@
+#N canvas 0 50 1454 667 10;
+#X obj 88 211 adjust_volume;
+#X obj 96 232 adjust_volume;
+#X obj 104 253 adjust_volume;
+#X obj 112 274 adjust_volume;
+#X obj 88 303 to_ableton;
+#X obj 77 73 r plant1;
+#X obj 139 72 r BegoniaState1;
+#X obj 316 72 r plant2;
+#X obj 379 72 r LittleGuyState1;
+#X obj 596 72 r plant3;
+#X obj 659 72 r LeafyState1;
+#X obj 836 72 r plant4;
+#X obj 899 72 r PokeyState1;
+#X obj 122 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 362 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 642 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 882 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 882 98 >=;
+#X obj 642 98 >=;
+#X obj 362 98 >=;
+#X obj 122 98 >=;
+#X obj 20 77 inlet;
+#X obj 186 143 r seq_init;
+#X msg 175 173 0;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 4 2;
+#X connect 3 0 4 3;
+#X connect 5 0 20 0;
+#X connect 6 0 20 1;
+#X connect 7 0 19 0;
+#X connect 8 0 19 1;
+#X connect 9 0 18 0;
+#X connect 10 0 18 1;
+#X connect 11 0 17 0;
+#X connect 12 0 17 1;
+#X connect 13 0 0 1;
+#X connect 14 0 1 1;
+#X connect 15 0 2 1;
+#X connect 16 0 3 1;
+#X connect 17 0 16 0;
+#X connect 18 0 15 0;
+#X connect 19 0 14 0;
+#X connect 20 0 13 0;
+#X connect 21 0 0 0;
+#X connect 21 0 1 0;
+#X connect 21 0 2 0;
+#X connect 21 0 3 0;
+#X connect 22 0 23 0;
+#X connect 23 0 0 2;
+#X connect 23 0 1 2;
+#X connect 23 0 2 2;
+#X connect 23 0 3 2;
