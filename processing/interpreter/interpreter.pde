@@ -1,45 +1,45 @@
-
 import processing.serial.*;
 
-// for port setup
-int SerialPortNumber=2;
-int PortSelected=0;
+private static final boolean DEBUG = false;
+private static final boolean TEST_MODE = false;
+private static final int TEST_PLANT = 1; // 1, 2, 3, 4
 
-int midiMax = 127;
-int midiMin = 0;
+// Serial Port Selection
+// MacBookPro: 3 / Windows: 0 (Typically)
+int PortSelected=3;
 
+// TODO: Clean and move to Touch_State
+// Nested Array for storing latest touch data
 float[][] Touches = {{0,0},{0,0},{0,0},{0,0}};
 
 Serial myPort;
-
 OSC_Controller osc;
-
 Touch_State state;
-  
-//JSONObject setting;
+
+// For testing idividual plants
+Test_Sound testSound;
 
 void setup() {
   
-  //json = new JSONObject();
-  
-  //for (int i = 0; i < Touches.length; i++) {
-    
-  //}
-
-  //json.setInt("id", 0);
-  //json.setString("species", "Panthera leo");
-  //json.setString("name", "Lion");
-
-  //saveJSONObject(json, "data/new.json");
+  // If the PortSelected doesn't work, look through the list and find the matching port.
   println(Serial.list());
+  
+  // Serial Port Setup
   String portName = Serial.list()[PortSelected];
   myPort = new Serial(this, portName, 19200); // Setup port with baudrate
   delay(50);
-  myPort.clear();
-  //myPort.buffer(20);
+  myPort.clear(); // Clear out any old buffer data
   
+  // OSC Setup - OSC is read by pure-data app
   osc = new OSC_Controller();
+  
+  // Touch Data Setup
   state = new Touch_State();
+  
+  if (TEST_MODE) {
+    // Test Sound Setup, passing in the app PApplet
+    testSound = new Test_Sound(this);
+  }
   
 }
 
@@ -76,20 +76,16 @@ void updateTouchValue(int touchNum,float[] touchValues) {
   if (touchNum < Touches.length) {
     Touches[touchNum][0] = touchValues[0]; // touch top value position
     Touches[touchNum][1] = touchValues[1]; // touch top value
-    //Touches[touchNum] = (float(rawValue)-600)/220;
   }
 }
 
 float[] getControlTouch(int touch) {
-    // limit to midi lows and highs
-    //int val = min(int(Touches[touch][1]/1000*0.8 * midiMax), midiMax );
-    //val = max(val, midiMin );
-    //return val;
     return Touches[touch];
 }
 
 void printControl(int touch) {
-  String s = "Touch " + touch + ": " + getControlTouch(touch);
+  float[] data = getControlTouch(touch);
+  String s = "Touch " + touch + ": " + data[0] + " - " + data[1];
   println(s);    
 }
 
@@ -114,10 +110,15 @@ void onIdle() {
 void draw() {
   
   monitorSerialPort();
-
   state.monitorTouches(Touches);
-  //printControl(0);
-  //printAllControls();
+  
+  if (DEBUG) {
+    printAllControls();
+  } else if (TEST_MODE) {
+    printControl(TEST_PLANT - 1);
+    // Play test sound limiting the filter frequency with a low and high.
+    testSound.playSound(getControlTouch(TEST_PLANT-1)[1], 590, 650); 
+  }   
   
   osc.toPD(0, getControlTouch(0) );
   osc.toPD(1, getControlTouch(1) );
