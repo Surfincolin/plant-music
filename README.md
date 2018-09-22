@@ -18,7 +18,8 @@ Inflorescent Crescendo is interactive art installation that features plants whic
 
 ### 2. Interpreter (Processing)
 1. Open Processing and make sure the libraries **sound** and **oscP5** are loaded.
-2. Open and Run the **interpreter.pde** project in the `processing/interpreter` folder.
+2. Open the **interpreter.pde** project in the `processing/interpreter` folder, change the `portSelected` variable to match your serial port setup.
+3.  Run
 - There are flags in the main file for testing and debugging the project.
 
 ### 3. Pure-Data(PD) App
