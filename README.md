@@ -26,6 +26,7 @@ Inflorescent Crescendo is interactive art installation that features plants whic
 1. Make sure you have a virtual midi driver running on your computer. On Mac, in the **Audio Midi Setup**, you want to click the check box for **Device is online** for **IAC Driver**. On Windows you can use [LoopMIDI](https://www.tobias-erichsen.de/software/loopmidi.html)
 2. Open **user-states.pd** in the `pd` folder.
 3. In PD, open the **Preferences > MIDI...** settings. Make sure your virtual midi driver is selected in the **Output Devices**. Click **Save All Settings**
+4. Click "Global On/Off" in 'user_states'
 4. Open the 'whole_sequence' patch and the 'osc-receiver-vanilla' sub patch. Click the 'Serial Data Toggle' to start seeing input from the interpreter. 
 5. Click the 'calibration' patch in 'osc-receiver-vanilla' and in each box set the threshold at which you want to register a touch for each plant.
 
